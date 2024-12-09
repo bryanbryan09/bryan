@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShade - Register</title>
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+
+    h1 {
+        margin: 20px 0;
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to SmartShade</h1>
+    </header>
+    <div class="container">
+        <p>Please enter your username to proceed:</p>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <button onclick="saveUsername()">Submit</button>
+    </div>
+
+    <script>
+        function saveUsername() {
+            const username = document.getElementById('username').value.trim();
+            console.log(username);
+            if (username) {
+                localStorage.setItem('username', username); // Save to localStorage
+                window.location.href = 'dashboard.html'; // Redirect to next page
+            } else {
+                alert('Please enter a username!');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
